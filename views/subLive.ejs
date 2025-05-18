@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live SubCount</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 80%;
+    background-color: #111;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cropped-iframe-wrapper {
+    width: 270px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+    transform: scale(2.4);
+    transform-origin: top center;
+    border-radius: 12px;
+  }
+
+  iframe {
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    .cropped-iframe-wrapper {
+      transform: scale(1.8);
+    }
+  }
+
+  @media (max-width: 485px) {
+    h1 {
+      font-size: 1.6rem;
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    .container {
+      gap: 20px;
+    }
+
+    .cropped-iframe-wrapper {
+      transform: scale(1.4);
+    }
+  }
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <h1>🔴 LIVE SUBSCRIBER COUNT</h1>
+    <div class="cropped-iframe-wrapper">
+      <iframe src="https://livecounts.io/embed/youtube-live-subscriber-counter/<%=channel_id%>" allowfullscreen></iframe>
+    </div>
+  </div>
+</body>
+</html>

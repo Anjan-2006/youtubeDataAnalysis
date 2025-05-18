@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Font Awesome for YouTube icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Fonts -->
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@500&family=Poppins:wght@400;500&display=swap');
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .icon-top {
+    font-size: 120px;
+    color: #ff0000;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    margin-bottom: -60px;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.2rem;
+    margin-bottom: 8px;
+    text-shadow: 3px 3px 8px rgba(255, 0, 0, 0.5);
+    color: #ff2020;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: #ff7272;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .form-container {
+    background: #111;
+    padding: 20px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgb(255, 0, 0);
+    width: 100%;
+    max-width: 600px;
+    max-height: 500px;
+    overflow: hidden;
+    border: 2px solid #FF0000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+
+  button {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444;
+    padding: 12px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #eee;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  button:hover {
+    background: #ff1d1d;
+    color: #fff;
+    box-shadow: 0 0 10px #c00000aa;
+    transform: translateX(5px);
+  }
+
+  button:active {
+    background: #ff1c1c;
+  }
+
+  img {
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #ff1d1d;
+    border-radius: 4px;
+  }
+
+  .footer {
+    font-size: 0.7rem;
+    font-family: 'Orbitron', sans-serif;
+    color: #888;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* 💡 Responsive styles for screens below 750px */
+  @media screen and (max-width: 750px) {
+    .icon-top {
+      font-size: 80px;
+      margin-bottom: -40px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+    }
+
+    .form-container {
+      padding: 16px 20px;
+      max-height: 80vh;
+    }
+
+    button {
+      font-size: 0.95rem;
+      padding: 10px 14px;
+    }
+
+    .button-group {
+      gap: 10px;
+      padding-right: 6px;
+    }
+
+    .footer {
+      font-size: 0.65rem;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+  <div class="icon-top"><i class="fa-brands fa-youtube"></i></div>
+  <h1>YouTube Channel Analysis</h1>
+  <div class="subtitle">Choose from the Top 20 Channels below</div>
+
+  <div class="form-container">
+    <form id="channelForm" action="/submit" method="POST">
+      <input type="hidden" name="input" id="channelInput" />
+
+      <div class="button-group">
+        <button type="submit" name="channel_name" value="mrbeast">1st MrBeast</button>
+        <button type="submit" name="channel_name" value="t_series">2nd T-Series</button>
+        <button type="submit" name="channel_name" value="cocomelon">3rd Cocomelon</button>
+        <button type="submit" name="channel_name" value="set_india">4th Set India</button>
+        <button type="submit" name="channel_name" value="vlad_and_niki">5th Vlad and Niki</button>
+        <button type="submit" name="channel_name" value="kids_diana_show">6th Kids Diana Show</button>
+        <button type="submit" name="channel_name" value="Like_Nastya">7th Like Nastya</button>
+        <button type="submit" name="channel_name" value="Stokes_Twins">8th Stokes Twins</button>
+        <button type="submit" name="channel_name" value="Zee_Music_Company">9th Zee Music Company</button>
+        <button type="submit" name="channel_name" value="PewDiePie">10th PewDiePie</button>
+        <button type="submit" name="channel_name" value="WWE">11th WWE</button>
+        <button type="submit" name="channel_name" value="KIMPRO">12th KIMPRO</button>
+        <button type="submit" name="channel_name" value="Goldmines">13th Goldmines</button>
+        <button type="submit" name="channel_name" value="SonySAB">14th Sony SAB</button>
+        <button type="submit" name="channel_name" value="BLACKPINK">15th BLACKPINK</button>
+        <button type="submit" name="channel_name" value="ChuChuTv">16th ChuChu TV</button>
+        <button type="submit" name="channel_name" value="AlansUniverse">17th Alan’s Universe</button>
+        <button type="submit" name="channel_name" value="ZeeTv">18th Zee TV</button>
+        <button type="submit" name="channel_name" value="BabyShark">19th Baby Shark</button>
+        <button type="submit" name="channel_name" value="FiveMinuteCraftes">20th 5-Minute Crafts</button>
+      </div>
+
+      <div class="footer">Project by Anj,Him,Mel,Pra</div>
+    </form>
+  </div>
+
+</body>
+</html>

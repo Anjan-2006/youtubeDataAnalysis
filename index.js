@@ -3,18 +3,22 @@ const express = require("express");
 const app = express();
 const mysql = require("mysql2");
 const path=require("path");
+require('dotenv').config();
 
 app.use(express.urlencoded({ extended: true }));
 app.set("views",path.join(__dirname,"views"));
 
 app.set("view engine", "ejs");
 
+const PORT = process.env.PORT || 3000;
 const connection = mysql.createConnection({
-    host: "localhost",
-    user: "anjan@localhost",
-    database: "youtubechannel_data",
-    password: "Anjan@2006_mysql"
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME
 });
+
+console.log("DB Host:", process.env.DB_HOST);
 
 app.get("/",(req,res)=>{
 
@@ -150,6 +154,6 @@ app.get("/livesub/:id",(req,res)=>{
     res.render("subLive.ejs",{channel_id:id});
 })
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("Server running on http://localhost:3000");
 });

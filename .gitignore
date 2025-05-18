@@ -1,0 +1,16 @@
+# Ignore environment variables file
+.env
+
+# Ignore node modules folder (huge and auto-generated)
+node_modules/
+
+# Optional: logs
+logs
+*.log
+npm-debug.log*
+
+# Optional: OS files
+.DS_Store
+
+# Optional: IDE/editor files (if you use VSCode, etc.)
+.vscode/
